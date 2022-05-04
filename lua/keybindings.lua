@@ -28,22 +28,25 @@ map("n", "<A-h>", "<C-w>h", opt)
 map("n", "<A-j>", "<C-w>j", opt)
 map("n", "<A-k>", "<C-w>k", opt)
 map("n", "<A-l>", "<C-w>l", opt)
+map("n", "<C-w>", ":BufferLinePickClose<CR>", opt)
+vim.cmd('nnoremap <A-m> :BookmarkToggle<CR>')
 
 --------------------------------------------------------------------
 -- 插件快捷键
-
-
+map("n", "<A-c>", "<cmd>normal gcc<CR>", opt)
 local pluginKeys = {}
 
 -- lsp 回调函数快捷键设置
+map("n", "<A-g>", "<cmd>lua vim.lsp.buf.definition()<CR>", opt)
+map('n', '<A-n>', '<cmd>lua vim.diagnostic.goto_next()<CR>', opt)
 pluginKeys.maplsp = function(mapbuf)
   -- rename
-  mapbuf('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opt)
+  mapbuf('n', '<A-r>', '<cmd>lua vim.lsp.buf.rename()<CR>', opt)
   -- code action
-  mapbuf('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opt)
+  mapbuf('n', '<Space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opt)
 
   -- go xx
-  mapbuf('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opt)
+  -- mapbuf('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opt)
   mapbuf('n', '<C-k>', '<cmd>lua vim.lsp.buf.hover()<CR>', opt)
   mapbuf('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opt)
   mapbuf('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opt)

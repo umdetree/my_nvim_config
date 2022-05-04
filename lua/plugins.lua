@@ -7,6 +7,11 @@ return require('packer').startup(function(use)
     use 'windwp/nvim-autopairs'
 
     use 'joshdick/onedark.vim'
+    use 'lifepillar/vim-solarized8'
+    use 'LunarVim/darkplus.nvim'
+    use 'sainnhe/everforest'
+    use 'doums/darcula'
+
     use {'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer'}
     use 'hrsh7th/cmp-nvim-lsp' -- { name = nvim_lsp }
     use 'hrsh7th/cmp-buffer'   -- { name = 'buffer' },
@@ -20,6 +25,21 @@ return require('packer').startup(function(use)
     -- lspkind
     use 'onsails/lspkind-nvim'
 
+    use {
+    'nvim-telescope/telescope.nvim',
+    requires = { {'nvim-lua/plenary.nvim'} }
+    }
+    use 'MattesGroeger/vim-bookmarks'
+    use 'tom-anders/telescope-vim-bookmarks.nvim'
+
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
+
     use 'simrat39/rust-tools.nvim'
+    use 'rust-lang/rust.vim'
 
 end)

@@ -1,7 +1,7 @@
 local lspkind = require('lspkind')
-local cmp = require'cmp'
+local cmp = require('cmp')
 
-cmp.setup {
+cmp.setup ({
   -- 指定 snippet 引擎
   snippet = {
     expand = function(args)
@@ -47,7 +47,7 @@ cmp.setup {
       end
     })
   },
-}
+})
 
 -- Use buffer source for `/`.
 cmp.setup.cmdline('/', {
