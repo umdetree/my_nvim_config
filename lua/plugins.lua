@@ -11,6 +11,7 @@ return require('packer').startup(function(use)
     use 'LunarVim/darkplus.nvim'
     use 'sainnhe/everforest'
     use 'doums/darcula'
+    use 'shaunsingh/nord.nvim'
 
     use {'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer'}
     use 'hrsh7th/cmp-nvim-lsp' -- { name = nvim_lsp }

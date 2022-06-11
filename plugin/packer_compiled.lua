@@ -135,6 +135,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\Lenovo\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nerdtree",
     url = "https://github.com/preservim/nerdtree"
   },
+  ["nord.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\Lenovo\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nord.nvim",
+    url = "https://github.com/shaunsingh/nord.nvim"
+  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "C:\\Users\\Lenovo\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-autopairs",
