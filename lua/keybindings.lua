@@ -34,6 +34,7 @@ vim.cmd('nnoremap <A-m> :BookmarkToggle<CR>')
 --------------------------------------------------------------------
 -- 插件快捷键
 map("n", "<A-c>", "<cmd>normal gcc<CR>", opt)
+map("v", "<A-c>", "<cmd>normal gcc<CR>", opt)
 local pluginKeys = {}
 
 -- lsp 回调函数快捷键设置

@@ -12,6 +12,7 @@ return require('packer').startup(function(use)
     use 'sainnhe/everforest'
     use 'doums/darcula'
     use 'shaunsingh/nord.nvim'
+    use 'EdenEast/nightfox.nvim'
 
     use {'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer'}
     use 'hrsh7th/cmp-nvim-lsp' -- { name = nvim_lsp }
@@ -39,6 +40,7 @@ return require('packer').startup(function(use)
             require('Comment').setup()
         end
     }
+    use 'tpope/vim-surround'
 
     use 'simrat39/rust-tools.nvim'
     use 'rust-lang/rust.vim'
