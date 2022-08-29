@@ -6,13 +6,15 @@ return require('packer').startup(function(use)
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use 'windwp/nvim-autopairs'
 
-    use 'joshdick/onedark.vim'
+    use 'navarasu/onedark.nvim'
     use 'lifepillar/vim-solarized8'
     use 'LunarVim/darkplus.nvim'
     use 'sainnhe/everforest'
     use 'doums/darcula'
     use 'shaunsingh/nord.nvim'
     use 'EdenEast/nightfox.nvim'
+    use 'tanvirtin/monokai.nvim'
+    use 'projekt0n/github-nvim-theme'
 
     use {'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer'}
     use 'hrsh7th/cmp-nvim-lsp' -- { name = nvim_lsp }

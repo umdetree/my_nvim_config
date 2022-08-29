@@ -28,6 +28,10 @@ map("n", "<A-h>", "<C-w>h", opt)
 map("n", "<A-j>", "<C-w>j", opt)
 map("n", "<A-k>", "<C-w>k", opt)
 map("n", "<A-l>", "<C-w>l", opt)
+map("n", "<A-+>", "<C-w>+", opt)
+map("n", "<A-->", "<C-w>-", opt)
+map("n", "<A-=>", "<C-w>=", opt)
+
 map("n", "<C-w>", ":BufferLinePickClose<CR>", opt)
 vim.cmd('nnoremap <A-m> :BookmarkToggle<CR>')
 
