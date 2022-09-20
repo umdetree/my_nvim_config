@@ -9,8 +9,8 @@ local servers = {
   rust_analyzer = require "lsp.rust",
     clangd = require "lsp.clangd",
     pyright = require "lsp.pyright",
-    jdtls = require "lsp.jdtls"
-  -- html = {},
+    jdtls = require "lsp.jdtls",
+  html = {}
   -- jsonls = {},
   -- tsserver = {}
 }

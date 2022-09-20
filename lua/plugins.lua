@@ -15,6 +15,9 @@ return require('packer').startup(function(use)
     use 'EdenEast/nightfox.nvim'
     use 'tanvirtin/monokai.nvim'
     use 'projekt0n/github-nvim-theme'
+    use 'NLKNguyen/papercolor-theme'
+    use 'marko-cerovac/material.nvim'
+    use 'folke/tokyonight.nvim'
 
     use {'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer'}
     use 'hrsh7th/cmp-nvim-lsp' -- { name = nvim_lsp }
