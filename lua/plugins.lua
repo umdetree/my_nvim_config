@@ -19,7 +19,9 @@ return require('packer').startup(function(use)
     use 'marko-cerovac/material.nvim'
     use 'folke/tokyonight.nvim'
 
-    use {'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer'}
+    use {'neovim/nvim-lspconfig'}
+    use 'williamboman/mason.nvim'
+    use 'williamboman/mason-lspconfig.nvim'
     use 'hrsh7th/cmp-nvim-lsp' -- { name = nvim_lsp }
     use 'hrsh7th/cmp-buffer'   -- { name = 'buffer' },
     use 'hrsh7th/cmp-path'     -- { name = 'path' }
