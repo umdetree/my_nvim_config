@@ -1,16 +1,20 @@
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
-    use 'preservim/nerdtree'
-    use 'ryanoasis/vim-devicons'
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons', -- optional, for file icons
+        },
+    }
     use 'akinsho/bufferline.nvim'
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    use { 'nvim-treesitter/nvim-treesitter'}
     use 'windwp/nvim-autopairs'
+    use 'lewis6991/impatient.nvim'
+    use 'lewis6991/gitsigns.nvim'
 
     use 'navarasu/onedark.nvim'
     use 'lifepillar/vim-solarized8'
-    use 'LunarVim/darkplus.nvim'
     use 'sainnhe/everforest'
-    use 'doums/darcula'
     use 'shaunsingh/nord.nvim'
     use 'EdenEast/nightfox.nvim'
     use 'tanvirtin/monokai.nvim'
@@ -18,6 +22,7 @@ return require('packer').startup(function(use)
     use 'NLKNguyen/papercolor-theme'
     use 'marko-cerovac/material.nvim'
     use 'folke/tokyonight.nvim'
+    use 'daschw/leaf.nvim'
 
     use {'neovim/nvim-lspconfig'}
     use 'williamboman/mason.nvim'
@@ -47,7 +52,12 @@ return require('packer').startup(function(use)
             require('Comment').setup()
         end
     }
-    use 'tpope/vim-surround'
+    use({
+        "kylechui/nvim-surround",
+        config = function()
+            require("nvim-surround").setup({})
+        end
+    })
 
     use 'simrat39/rust-tools.nvim'
     use 'rust-lang/rust.vim'

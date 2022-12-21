@@ -33,6 +33,11 @@ cmp.setup ({
        { name = 'path' }
     }),
 
+    window = {
+        documentation = cmp.config.window.bordered(),
+        completion = cmp.config.window.bordered(),
+    },
+
   -- 快捷键
   mapping = require'keybindings'.cmp(cmp),
   -- 使用lspkind-nvim显示类型图标
@@ -57,10 +62,10 @@ cmp.setup.cmdline('/', {
 })
 
 -- Use cmdline & path source for ':'.
-cmp.setup.cmdline(':', {
-  sources = cmp.config.sources({
-    { name = 'path' }
-  }, {
-      { name = 'cmdline' }
-    })
-})
+-- cmp.setup.cmdline(':', {
+--   sources = cmp.config.sources({
+--     { name = 'path' }
+--   }, {
+--       { name = 'cmdline' }
+--     })
+-- })

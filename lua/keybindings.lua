@@ -10,7 +10,8 @@ map("v", "<", "<gv", opt)
 map("v", ">", ">gv", opt)
 
 -- Nerdtree toggle
-vim.cmd('nnoremap <C-b> :NERDTreeToggle<CR>')
+-- vim.cmd('nnoremap <C-b> :NERDTreeToggle<CR>')
+vim.cmd('nnoremap <C-b> :NvimTreeToggle<CR>')
 
 -- bufferline 左右Tab切换
 map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
@@ -52,16 +53,16 @@ pluginKeys.maplsp = function(mapbuf)
 
   -- go xx
   -- mapbuf('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opt)
-  mapbuf('n', '<C-k>', '<cmd>lua vim.lsp.buf.hover()<CR>', opt)
-  mapbuf('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opt)
-  mapbuf('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opt)
-  mapbuf('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opt)
+  mapbuf('n', '<C-k>', '<cmd>lua vim.lsp.buf.hover({popup_opts={border=round}})<CR>', opt)
+  mapbuf('n', '<A-d>', '<cmd>lua vim.lsp.buf.declaration()<CR>', opt)
+  mapbuf('n', '<A-i>', '<cmd>lua vim.lsp.buf.implementation()<CR>', opt)
+  mapbuf('n', '<A-o>', '<cmd>lua vim.lsp.buf.references()<CR>', opt)
   -- diagnostic
   mapbuf('n', 'go', '<cmd>lua vim.diagnostic.open_float()<CR>', opt)
-  mapbuf('n', 'gp', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opt)
-  mapbuf('n', 'gn', '<cmd>lua vim.diagnostic.goto_next()<CR>', opt)
+  mapbuf('n', '<A-p>', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opt)
+  -- mapbuf('n', 'gn', '<cmd>lua vim.diagnostic.goto_next()<CR>', opt)
   -- mapbuf('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opt)
-  mapbuf('n', '<gk>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opt)
+  mapbuf('n', '<A-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opt)
   -- leader + =
   -- mapbuf('n', '<leader>=', '<cmd>lua vim.lsp.buf.formatting()<CR>', opt)
   -- mapbuf('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opt)

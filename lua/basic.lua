@@ -39,7 +39,7 @@ vim.o.incsearch = true
 -- 使用增强状态栏后不再需要 vim 的模式提示
 vim.o.showmode = true
 -- 命令行高为2，提供足够的显示空间
-vim.o.cmdheight = 2
+-- vim.o.cmdheight = 2
 -- 当文件被外部程序修改时，自动加载
 vim.o.autoread = true
 vim.bo.autoread = true
@@ -65,11 +65,6 @@ vim.o.splitbelow = true
 vim.o.splitright = true
 -- 自动补全不自动选中
 vim.g.completeopt = "menu,menuone,noselect,noinsert"
--- 样式
-vim.o.termguicolors = true
-vim.opt.termguicolors = true
-vim.cmd('colorscheme dawnfox')
-vim.o.background = "light"
 -- 不可见字符的显示，这里只把空格显示为一个点
 --vim.o.list = true
 --vim.o.listchars = "space:·"
