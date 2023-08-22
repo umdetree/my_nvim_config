@@ -12,21 +12,22 @@ local servers = {
     pyright = require "lsp.pyright",
     -- jdtls = require "lsp.jdtls",
     gopls = require "lsp.gopls",
-    html = {}
+    html = {},
     -- jsonls = {},
-    -- tsserver = {}
+    tsserver = {}
 }
 
 -- 自动安装 LanguageServers
 lsp_installer.setup({
     -- ensure_installed = servers.name
     ensure_installed = {
-        "sumneko_lua",
+        "lua_ls",
         "rust_analyzer",
         "clangd",
         "pyright",
         "jdtls",
         "html",
+        "tsserver",
     }
 })
 
@@ -45,15 +46,17 @@ lsp_installer.setup_handlers{ function(server_name)
 
         if server_name == "rust_analyzer" then
             -- Initialize the LSP via rust-tools instead
-            require("rust-tools").setup {
+            require("rust-tools").setup( {
                 -- The "server" property provided in rust-tools setup function are the
                 -- settings rust-tools will provide to lspconfig during init.            -- 
                 -- We merge the necessary settings from nvim-lsp-installer (server:get_default_options())
                 -- with the user's own settings (opts).
-                -- server = {
-                --     on_attach = on_attach
-                -- }
-            }
+                server = {
+                    on_attach = on_attach
+                }
+            })
+            require("rust-tools").inlay_hints.set()
+            require("rust-tools").inlay_hints.enable()
         end
 
         lspconfig[server_name].setup{

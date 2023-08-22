@@ -32,15 +32,21 @@ map("n", "<A-l>", "<C-w>l", opt)
 map("n", "<A-+>", "<C-w>+", opt)
 map("n", "<A-->", "<C-w>-", opt)
 map("n", "<A-=>", "<C-w>=", opt)
+map("n", "<A-.>", "<C-w>>", opt)
+map("n", "<A-,>", "<C-w><", opt)
 
 map("n", "<C-w>", ":BufferLinePickClose<CR>", opt)
 vim.cmd('nnoremap <A-m> :BookmarkToggle<CR>')
 
 --------------------------------------------------------------------
 -- 插件快捷键
+-- comment
 map("n", "<A-c>", "<cmd>normal gcc<CR>", opt)
 map("v", "<A-c>", "<cmd>normal gcc<CR>", opt)
 local pluginKeys = {}
+
+-- Telescope
+map("n", "<C-p>", "<cmd>Telescope find_files<CR>", opt)
 
 -- lsp 回调函数快捷键设置
 map("n", "<A-g>", "<cmd>lua vim.lsp.buf.definition()<CR>", opt)
@@ -63,6 +69,7 @@ pluginKeys.maplsp = function(mapbuf)
   -- mapbuf('n', 'gn', '<cmd>lua vim.diagnostic.goto_next()<CR>', opt)
   -- mapbuf('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opt)
   mapbuf('n', '<A-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opt)
+  mapbuf('i', '<A-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opt)
   -- leader + =
   -- mapbuf('n', '<leader>=', '<cmd>lua vim.lsp.buf.formatting()<CR>', opt)
   -- mapbuf('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opt)

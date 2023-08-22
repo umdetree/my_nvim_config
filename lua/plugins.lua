@@ -23,6 +23,7 @@ return require('packer').startup(function(use)
     use 'marko-cerovac/material.nvim'
     use 'folke/tokyonight.nvim'
     use 'daschw/leaf.nvim'
+    use 'Shatur/neovim-ayu'
 
     use {'neovim/nvim-lspconfig'}
     use 'williamboman/mason.nvim'
@@ -40,8 +41,9 @@ return require('packer').startup(function(use)
     use 'onsails/lspkind-nvim'
 
     use {
-    'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
+        'nvim-telescope/telescope.nvim',
+        requires = { {'nvim-lua/plenary.nvim'} },
+        -- branch = "0.1.x",
     }
     use 'MattesGroeger/vim-bookmarks'
     use 'tom-anders/telescope-vim-bookmarks.nvim'
@@ -59,6 +61,10 @@ return require('packer').startup(function(use)
         end
     })
 
+    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup
+        = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = {
+            "markdown" }, })
+    vim.g.mkdp_auto_close = 0
     use 'simrat39/rust-tools.nvim'
     use 'rust-lang/rust.vim'
 
