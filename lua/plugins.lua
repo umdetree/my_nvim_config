@@ -1,12 +1,16 @@
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
+
     use {
         'nvim-tree/nvim-tree.lua',
+        -- commit="0074120",
         requires = {
             'nvim-tree/nvim-web-devicons', -- optional, for file icons
         },
     }
-    use 'akinsho/bufferline.nvim'
+    use {
+        'akinsho/bufferline.nvim',
+    }
     use { 'nvim-treesitter/nvim-treesitter'}
     use 'windwp/nvim-autopairs'
     use 'lewis6991/impatient.nvim'
@@ -24,6 +28,8 @@ return require('packer').startup(function(use)
     use 'folke/tokyonight.nvim'
     use 'daschw/leaf.nvim'
     use 'Shatur/neovim-ayu'
+    use 'Mofiqul/vscode.nvim'
+    use 'sainnhe/sonokai'
 
     use {'neovim/nvim-lspconfig'}
     use 'williamboman/mason.nvim'
@@ -67,5 +73,5 @@ return require('packer').startup(function(use)
     vim.g.mkdp_auto_close = 0
     use 'simrat39/rust-tools.nvim'
     use 'rust-lang/rust.vim'
-
+    -- use 'mfussenegger/nvim-jdtls'
 end)

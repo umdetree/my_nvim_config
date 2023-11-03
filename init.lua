@@ -9,8 +9,8 @@ require('basic')
 require('color')
 require('plugins')
 require('keybindings')
+-- require('gitsigns').setup{}
 require('nvim-tree').setup{}
-require('gitsigns').setup{}
 
 require('plugin-config/bufferline')
 require('plugin-config/nvim-treesitter')
