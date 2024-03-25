@@ -3,6 +3,8 @@ require'nvim-treesitter.configs'.setup {
   -- :TSInstallInfo 命令查看支持的语言
   ensure_installed = {"html", "css", "vim", "lua", "javascript", "typescript", "c", "rust",
     "toml", "cpp"},
+  sync_install = false,
+  build = ":TSUpdate",
   -- 启用代码高亮功能
   highlight = {
     enable = true,

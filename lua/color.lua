@@ -13,10 +13,10 @@ local random_dark_color = {
     "habamax",
     "github_dark",
     "onedark",
-    "ayu-dark",
     "ayu-mirage",
     "vscode",
-    "sonokai"
+    "sonokai",
+    "tokyodark"
 }
 -- 样式
 vim.o.termguicolors = true
