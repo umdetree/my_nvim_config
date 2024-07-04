@@ -22,6 +22,9 @@ local random_dark_color = {
 vim.o.termguicolors = true
 vim.opt.termguicolors = true
 math.randomseed(os.time())
-local my_color = random_dark_color[math.random(18)]
-vim.cmd('colorscheme ' .. my_color)
+-- local my_color = random_dark_color[math.random(#random_dark_color)]
+-- vim.cmd('colorscheme ' .. local_my_color)
+vim.cmd('colorscheme nord')
 vim.o.background = "dark"
+vim.cmd('hi Normal cterm=none guibg=none')
+vim.cmd('hi NonText cterm=none guibg=none')
