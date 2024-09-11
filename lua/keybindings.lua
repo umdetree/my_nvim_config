@@ -47,6 +47,7 @@ local pluginKeys = {}
 
 -- Telescope
 map("n", "<C-p>", "<cmd>Telescope find_files<CR>", opt)
+map("n", "<A-f>", "<cmd>AerialToggle<CR>", opt)
 
 -- lsp 回调函数快捷键设置
 map("n", "<A-g>", "<cmd>lua vim.lsp.buf.definition()<CR>", opt)

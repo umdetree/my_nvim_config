@@ -27,6 +27,7 @@ require('nvim-tree').setup{}
 require('plugin-config/bufferline')
 require('plugin-config/nvim-treesitter')
 require('mason').setup()
+require('aerial').setup()
 
 require('lsp/setup')
 require('lsp/nvim-cmp')

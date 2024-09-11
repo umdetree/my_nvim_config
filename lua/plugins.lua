@@ -40,6 +40,7 @@ return require('lazy').setup(
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-cmdline',
     'hrsh7th/nvim-cmp',
+    'github/copilot.vim',
     -- vsnip
     'hrsh7th/cmp-vsnip',
     'hrsh7th/vim-vsnip',
@@ -51,6 +52,7 @@ return require('lazy').setup(
         'nvim-telescope/telescope.nvim',
         dependencies = { {'nvim-lua/plenary.nvim'} },
     },
+    'stevearc/aerial.nvim',
     'MattesGroeger/vim-bookmarks',
     'tom-anders/telescope-vim-bookmarks.nvim',
 
