@@ -14,9 +14,14 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   })
 end
+vim.diagnostic.config({
+    virtual_text = true,
+})
 vim.opt.rtp:prepend(lazypath)
 
 require('plugins')
+require('mason').setup()
+require('mason-lspconfig').setup()
 -- require('impatient')
 require('basic')
 require('color')
@@ -26,7 +31,6 @@ require('nvim-tree').setup{}
 
 require('plugin-config/bufferline')
 require('plugin-config/nvim-treesitter')
-require('mason').setup()
 require('aerial').setup()
 
 require('lsp/setup')

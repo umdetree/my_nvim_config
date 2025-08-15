@@ -14,41 +14,59 @@ local servers = {
     gopls = require "lsp.gopls",
     html = {},
     -- jsonls = {},
-    tsserver = {}
+    ts_ls = {}
 }
+ensure_installed = {
+    "rust_analyzer",
+    "clangd",
+    "pyright",
+    "jdtls",
+    "gopls",
+    "html",
+    "ts_ls",
+    "lua_ls",
+}
+
+for _, name in ipairs(ensure_installed) do
+    if servers[name] == nil then
+        servers[name] = {}
+    end
+    vim.lsp.config(name, {
+        on_attach = function(client, bufnr)
+            local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+            -- 绑定快捷键
+            require('keybindings').maplsp(buf_set_keymap)
+        end,
+        flags = {
+            debounce_text_changes = 150,
+        },
+        -- settings = servers[name],
+        capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
+    })
+end
 
 -- 自动安装 LanguageServers
 lsp_installer.setup({
     -- ensure_installed = servers.name
-    ensure_installed = {
-        "lua_ls",
-        "rust_analyzer",
-        "clangd",
-        "pyright",
-        "jdtls",
-        "html",
-        "tsserver",
-    }
+    ensure_installed = ensure_installed,
 })
 
-lsp_installer.setup_handlers{ function(server_name)
-    local opts = servers[server_name]
-    if opts then
-        local on_attach = function(_, bufnr)
-            local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-            -- local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-            -- 绑定快捷键
-            require('keybindings').maplsp(buf_set_keymap)
-        end
-        opts.flags = {
-            debounce_text_changes = 150,
-        }
-
-        lspconfig[server_name].setup{
-            on_attach = on_attach
-        }
-    end
-end}
+-- lsp_installer.setup_handlers{
+--  function(server_name)
+--     local on_attach = function(_, bufnr)
+--         local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+--         -- local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+--         -- 绑定快捷键
+--         require('keybindings').maplsp(buf_set_keymap)
+--     end
+--     -- opts.flags = {
+--     --     debounce_text_changes = 150,
+--     -- }
+-- 
+--     lspconfig[server_name].setup{
+--         on_attach = on_attach
+--     }
+-- end}
 
 local _border = "rounded"
 

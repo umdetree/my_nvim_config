@@ -32,15 +32,41 @@ return require('lazy').setup(
     'sainnhe/sonokai',
     "tiagovla/tokyodark.nvim",
 
-    'neovim/nvim-lspconfig',
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
+    'neovim/nvim-lspconfig',
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-cmdline',
     'hrsh7th/nvim-cmp',
-    'github/copilot.vim',
+    -- 'github/copilot.vim',
+    {
+        "zbirenbaum/copilot.lua",
+        event = "InsertEnter",
+        cmd = "Copilot",
+        config = function()
+            require("copilot").setup({
+                filetypes = {
+                    yaml = true,
+                    markdown = true,
+                    help = true,
+                    gitcommit = true,
+                    gitrebase = true,
+                    hgcommit = true,
+                    svn = true,
+                    cvs = true,
+                    ["."] = true,
+                },
+                suggestion = {
+                    auto_trigger = true,
+                    keymap = {
+                        accept = "<Tab>",
+                    }
+                }
+            })
+        end
+    },
     -- vsnip
     'hrsh7th/cmp-vsnip',
     'hrsh7th/vim-vsnip',
@@ -58,9 +84,6 @@ return require('lazy').setup(
 
     {
         'numToStr/Comment.nvim',
-        config = function()
-            require('Comment').setup()
-        end
     },
     {
         "kylechui/nvim-surround",
