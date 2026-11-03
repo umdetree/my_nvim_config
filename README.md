@@ -55,6 +55,7 @@ ftplugin/                -- 按文件类型的局部设置
   - `VeryLazy`：bufferline、surround、bookmarks
   - `cmd`/`keys`：nvim-tree、telescope、aerial、Mason
 - `nvim-treesitter` main 分支不支持懒加载，因此保持 eager；解析器在 `stdpath('data')/site`，启动时只安装缺失项。
+- `nvim .` 或 `nvim <目录>` 会在 `VimEnter` 时懒加载 nvim-tree，并把目录 buffer 换成空白编辑窗口 + 侧栏。
 - `lazy-lock.json` 已纳入版本控制，插件版本可复现。
 - Mason 不再在启动时刷新 registry；执行 `:Mason` / `:MasonInstall` 时才会检查缺失的 LSP。
 - Rust 不再使用归档的 `rust-tools.nvim`，改为内置 `rust_analyzer` + `vim.lsp.inlay_hint`。
