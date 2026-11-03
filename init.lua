@@ -1,45 +1,10 @@
--- Example config in lua
--- vim.g.nord_contrast = true
--- vim.g.nord_borders = false
--- vim.g.nord_disable_background = false
--- vim.g.nord_italic = false
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
-end
-vim.diagnostic.config({
-    virtual_text = true,
-})
-vim.opt.rtp:prepend(lazypath)
+-- Entry point: keep this file tiny.
+-- Real configuration lives in lua/config (behaviour) and lua/plugins (plugins).
 
-require('plugins')
-require('mason').setup()
-require('mason-lspconfig').setup()
--- require('impatient')
-require('basic')
-require('color')
-require('keybindings')
-require('gitsigns').setup{}
-require('nvim-tree').setup{}
+-- Use Neovim's built-in Lua module cache. It is enabled by default on 0.11,
+-- but calling it explicitly also covers older versions.
+vim.loader.enable()
 
-require('plugin-config/bufferline')
-require('plugin-config/nvim-treesitter')
-require('aerial').setup()
-
-require('lsp/setup')
-require('lsp/nvim-cmp')
-
-require('nvim-autopairs').setup{}
-require('Comment').setup{}
-require('telescope').load_extension('vim_bookmarks')
-
-require("leaf").setup({
-    contrast = "high",
-})
+require("config.options")
+require("config.keymaps")
+require("config.lazy")
